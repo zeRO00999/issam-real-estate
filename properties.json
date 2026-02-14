@@ -1,0 +1,20 @@
+[
+  {
+    "title": "2BR Apartment – Al Rashidiya",
+    "price": "34,000 AED",
+    "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498f",
+    "whatsapp": "https://wa.me/971567606178"
+  },
+  {
+    "title": "Studio – Al Jurf 3",
+    "price": "22,000 AED",
+    "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e",
+    "whatsapp": "https://wa.me/971567606178"
+  },
+  {
+    "title": "3BR Villa – Al Nuaimia",
+    "price": "80,000 AED",
+    "image": "https://images.unsplash.com/photo-1598928506310-4f2f19c3d5ef",
+    "whatsapp": "https://wa.me/971567606178"
+  }
+]
