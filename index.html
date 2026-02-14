@@ -16,6 +16,7 @@
   --text-light:#f5f5f5;
 }
 
+/* BODY */
 body{
   margin:0;
   font-family:'Playfair Display', serif;
@@ -26,7 +27,7 @@ body{
 /* HERO */
 .hero{
   background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80');
+  url('https://mawjan-residence.ae/images/intro_bg_desktop.webp');
   background-size:cover;
   background-position:center;
   text-align:center;
@@ -73,78 +74,6 @@ body{
   padding:40px;
   border-radius:16px;
   box-shadow:0 15px 40px rgba(0,0,0,0.6);
-}
-
-/* CONTACT CUSTOM */
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
-
-.contact-item{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  padding:25px;
-  border-radius:18px;
-  text-decoration:none;
-  color:white;
-  font-size:18px;
-  transition:0.4s;
-  position:relative;
-  overflow:hidden;
-}
-
-/* Call Button */
-.contact-call{
-  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
-  border:1px solid var(--accent);
-}
-.contact-call:hover{
-  background:var(--accent);
-  color:#111;
-  transform:translateY(-8px);
-}
-
-/* Email Button */
-.contact-email{
-  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
-  border:1px solid #00c3ff;
-}
-.contact-email:hover{
-  box-shadow:0 0 20px #00c3ff;
-  transform:translateY(-8px);
-}
-
-/* TikTok Special */
-.tiktok-special{
-  background:#000;
-  border:2px solid #ff0050;
-  animation:pulseTikTok 2.5s infinite;
-}
-.tiktok-special::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,#00f2ea,transparent);
-  transition:0.6s;
-}
-.tiktok-special:hover::before{
-  left:100%;
-}
-.tiktok-special:hover{
-  box-shadow:0 0 25px #ff0050, 0 0 50px #00f2ea;
-  transform:translateY(-8px);
-}
-@keyframes pulseTikTok{
-  0%{ box-shadow:0 0 0 0 rgba(255,0,80,0.6); }
-  70%{ box-shadow:0 0 0 18px rgba(255,0,80,0); }
-  100%{ box-shadow:0 0 0 0 rgba(255,0,80,0); }
 }
 
 /* SERVICES */
@@ -207,17 +136,97 @@ body{
   margin-top: auto;
 }
 
-/* FLOATING */
-.whatsapp-float{
+/* CONTACT FLOATING SECTION */
+.contact-float{
   position:fixed;
   bottom:20px;
-  right:20px;
-  background:var(--whatsapp);
-  color:white;
-  padding:15px 18px;
-  border-radius:50%;
-  font-size:22px;
+  left:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:9999;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 22px;
+  border-radius:16px;
   text-decoration:none;
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  transition:0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Call Button - Luxury Gradient + Neon hover */
+.contact-call{
+  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
+  border:1px solid var(--accent);
+  box-shadow:0 4px 12px rgba(212,175,55,0.4);
+}
+
+.contact-call:hover{
+  background:var(--accent);
+  color:#111;
+  transform:translateY(-6px);
+  box-shadow:0 0 12px var(--accent),0 0 25px var(--accent);
+}
+
+/* Email Button - Luxury Gradient + Neon hover */
+.contact-email{
+  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
+  border:1px solid #00c3ff;
+  box-shadow:0 4px 12px rgba(0,195,255,0.4);
+}
+
+.contact-email:hover{
+  background:#00c3ff;
+  color:#111;
+  transform:translateY(-6px);
+  box-shadow:0 0 12px #00c3ff,0 0 25px #00c3ff;
+}
+
+/* TikTok Special */
+.tiktok-special{
+  background:#000;
+  border:2px solid #ff0050;
+  animation:pulseTikTok 2.5s infinite;
+}
+
+.tiktok-special img{
+  width:26px;
+  height:26px;
+  border-radius:4px;
+}
+
+.tiktok-special::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,#00f2ea,transparent);
+  transition:0.6s;
+}
+
+.tiktok-special:hover::before{
+  left:100%;
+}
+
+.tiktok-special:hover{
+  box-shadow:0 0 25px #ff0050, 0 0 50px #00f2ea;
+  transform:translateY(-6px);
+}
+
+@keyframes pulseTikTok{
+  0%{ box-shadow:0 0 0 0 rgba(255,0,80,0.6); }
+  70%{ box-shadow:0 0 0 18px rgba(255,0,80,0); }
+  100%{ box-shadow:0 0 0 0 rgba(255,0,80,0); }
 }
 
 /* FOOTER */
@@ -239,7 +248,7 @@ footer{
 <!-- HERO -->
 <div class="hero">
 <h1>Issam Eltayb</h1>
-<p>Professional Real Estate Agent in the UAE</p>
+<p>Professional Real Estate Consultant in the UAE</p>
 <a class="btn btn-primary"
 href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html"
 target="_blank">View Listings on Bayut</a>
@@ -252,15 +261,8 @@ target="_blank">WhatsApp</a>
 <div class="section">
 <div class="card">
 <h2>About Me</h2>
-<p>I am Issam Eltayb, a professional real estate Agent in Ajman, UAE.
+<p>I am Issam Eltayb, a professional real estate consultant in Ajman, UAE.
 I specialize in residential rentals, investment properties, and full contract support.</p>
-</div>
-
-<!-- CONTACT UNDER ABOUT -->
-<div class="contact-grid">
-<a class="contact-item contact-call" href="tel:+971567606178">📞 <div><strong>Call Me</strong><br>056 760 6178</div></a>
-<a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com">📧 <div><strong>Email Me</strong><br>issamelhag09@gmail.com</div></a>
-<a class="contact-item tiktok-special" href="https://www.tiktok.com/@realestateaccount007" target="_blank">🎵 <div><strong>Follow on TikTok</strong><br>@realestateaccount007</div></a>
 </div>
 </div>
 
@@ -279,6 +281,15 @@ I specialize in residential rentals, investment properties, and full contract su
 <div class="section">
 <h2>Featured Properties</h2>
 <div class="properties property-placeholder">Loading properties...</div>
+</div>
+
+<!-- FLOATING CONTACT SECTION -->
+<div class="contact-float">
+<a class="contact-item contact-call" href="tel:+971567606178">📞 <div><strong>Call Me</strong><br>056 760 6178</div></a>
+<a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com">📧 <div><strong>Email Me</strong><br>issamelhag09@gmail.com</div></a>
+<a class="contact-item tiktok-special" href="https://www.tiktok.com/@realestateaccount007" target="_blank">
+<img src="https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg?semt=ais_user_personalization&w=740&q=80" alt="TikTok">
+<div><strong>Follow on TikTok</strong><br>@realestateaccount007</div></a>
 </div>
 
 <!-- FLOATING WHATSAPP -->
