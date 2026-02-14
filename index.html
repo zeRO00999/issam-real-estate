@@ -33,18 +33,9 @@ body{
   padding:120px 20px;
 }
 
-.hero h1{
-  font-size:48px;
-  margin:0;
-}
+.hero h1{ font-size:48px; margin:0; }
+.hero p{ font-size:20px; margin-top:15px; opacity:0.9; }
 
-.hero p{
-  font-size:20px;
-  margin-top:15px;
-  opacity:0.9;
-}
-
-/* BUTTONS */
 .btn{
   display:inline-block;
   padding:14px 30px;
@@ -53,101 +44,145 @@ body{
   font-weight:700;
   margin:10px;
   transition:0.3s;
-  cursor:pointer;
 }
 
-.btn-primary{
-  background:var(--accent);
-  color:#111;
-}
+.btn-primary{ background:var(--accent); color:#111; }
+.btn-whatsapp{ background:var(--whatsapp); color:white; }
 
-.btn-primary:hover{
+.btn:hover{
   transform:translateY(-3px);
-}
-
-.btn-whatsapp{
-  background:var(--whatsapp);
-  color:white;
-}
-
-.btn-whatsapp:hover{
-  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(212,175,55,0.4);
 }
 
 /* SECTION */
 .section{
-  max-width:1100px;
-  margin:60px auto;
+  max-width:1200px;
+  margin:70px auto;
   padding:0 20px;
-}
-
-.card{
-  background:#222;
-  padding:35px;
-  border-radius:15px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.5);
-  margin-bottom:40px;
 }
 
 .section h2{
   color:var(--accent);
-  margin-bottom:25px;
+  margin-bottom:30px;
+  text-align:center;
 }
 
-/* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+/* ABOUT */
+.card{
+  background:#222;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
-.service-box{
-  background:#2c2c2c;
-  padding:25px;
-  border-radius:14px;
-  transition:0.3s ease;
-}
-
-.service-box:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(212,175,55,0.4);
-}
-
-.service-box h3{
-  color:var(--accent);
-}
-
-.service-box p{
-  color:#ddd;
-  line-height:1.6;
-}
-
-/* CONTACT */
+/* CONTACT CUSTOM */
 .contact-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-top:40px;
 }
 
 .contact-item{
   display:flex;
   align-items:center;
   gap:15px;
-  padding:18px;
-  border-radius:14px;
+  padding:25px;
+  border-radius:18px;
   text-decoration:none;
   color:white;
+  font-size:18px;
+  transition:0.4s;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Call Button */
+.contact-call{
+  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
+  border:1px solid var(--accent);
+}
+
+.contact-call:hover{
+  background:var(--accent);
+  color:#111;
+  transform:translateY(-8px);
+}
+
+/* Email Button */
+.contact-email{
+  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
+  border:1px solid #00c3ff;
+}
+
+.contact-email:hover{
+  box-shadow:0 0 20px #00c3ff;
+  transform:translateY(-8px);
+}
+
+/* TikTok Special */
+.tiktok-special{
+  background:#000;
+  border:2px solid #ff0050;
+  animation:pulseTikTok 2.5s infinite;
+}
+
+.tiktok-special::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,#00f2ea,transparent);
+  transition:0.6s;
+}
+
+.tiktok-special:hover::before{
+  left:100%;
+}
+
+.tiktok-special:hover{
+  box-shadow:0 0 25px #ff0050, 0 0 50px #00f2ea;
+  transform:translateY(-8px);
+}
+
+@keyframes pulseTikTok{
+  0%{ box-shadow:0 0 0 0 rgba(255,0,80,0.6); }
+  70%{ box-shadow:0 0 0 18px rgba(255,0,80,0); }
+  100%{ box-shadow:0 0 0 0 rgba(255,0,80,0); }
+}
+
+/* SERVICES & PROPERTIES */
+.services, .properties{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.service-box, .property-box{
   background:#2c2c2c;
+  padding:30px;
+  border-radius:16px;
   transition:0.3s;
 }
 
-.contact-item:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(212,175,55,0.4);
-  color:var(--accent);
+.service-box:hover, .property-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(212,175,55,0.4);
 }
 
-/* FLOATING WHATSAPP */
+/* PROPERTY SPACE */
+.property-placeholder{
+  padding:60px;
+  text-align:center;
+  border:2px dashed var(--accent);
+  border-radius:20px;
+  color:#bbb;
+  font-size:20px;
+}
+
+/* FLOATING */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -169,11 +204,8 @@ footer{
   margin-top:60px;
 }
 
-/* MOBILE */
 @media(max-width:768px){
   .hero h1{ font-size:36px; }
-  .hero p{ font-size:16px; }
-  .contact-grid{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -186,15 +218,15 @@ footer{
 <p>Professional Real Estate Consultant in the UAE</p>
 
 <a class="btn btn-primary"
-   href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html"
-   target="_blank">
-   View Listings on Bayut
+href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html"
+target="_blank">
+View Listings on Bayut
 </a>
 
 <a class="btn btn-whatsapp"
-   href="https://wa.me/971567606178"
-   target="_blank">
-   WhatsApp
+href="https://wa.me/971567606178"
+target="_blank">
+WhatsApp
 </a>
 </div>
 
@@ -204,78 +236,62 @@ footer{
 <h2>About Me</h2>
 <p>
 I am Issam Eltayb, a professional real estate consultant in Ajman, UAE.
-I specialize in residential rentals, investment properties, and full contract support,
-ensuring smooth and transparent transactions for clients.
+I specialize in residential rentals, investment properties, and full contract support.
 </p>
+</div>
+
+<!-- CONTACT UNDER ABOUT -->
+<div class="contact-grid">
+
+<a class="contact-item contact-call" href="tel:+971567606178">
+📞 <div><strong>Call Me</strong><br>056 760 6178</div>
+</a>
+
+<a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com">
+📧 <div><strong>Email Me</strong><br>issamelhag09@gmail.com</div>
+</a>
+
+<a class="contact-item tiktok-special"
+href="https://www.tiktok.com/@realestateaccount007"
+target="_blank">
+🎵 <div><strong>Follow on TikTok</strong><br>@realestateaccount007</div>
+</a>
+
 </div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
 <h2>Services I Provide</h2>
-
 <div class="services">
-
 <div class="service-box">
 <h3>🏢 Residential Rentals</h3>
-<p>Apartments, villas, and studios in prime Ajman locations with competitive pricing.</p>
-<a class="btn btn-whatsapp"
-href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Residential%20Rentals"
-target="_blank">Ask About This Service</a>
+<p>Apartments, villas, and studios in prime Ajman locations.</p>
 </div>
-
 <div class="service-box">
 <h3>📈 Investment Consulting</h3>
-<p>Expert guidance on high-return rental properties and smart real estate investments.</p>
-<a class="btn btn-whatsapp"
-href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Investment%20Consulting"
-target="_blank">Ask About This Service</a>
+<p>High-return property investment guidance.</p>
 </div>
-
 <div class="service-box">
 <h3>📝 Full Contract Support</h3>
-<p>Complete assistance from property viewing to contract signing.</p>
-<a class="btn btn-whatsapp"
-href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Full%20Contract%20Support"
-target="_blank">Ask About This Service</a>
+<p>Complete assistance from viewing to contract signing.</p>
 </div>
-
 <div class="service-box">
 <h3>🏗 Property Marketing</h3>
-<p>Marketing solutions for landlords to rent or sell properties faster.</p>
-<a class="btn btn-whatsapp"
-href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Property%20Marketing"
-target="_blank">Ask About This Service</a>
+<p>Professional marketing for landlords.</p>
 </div>
-
 </div>
 </div>
 
-<!-- CONTACT -->
+<!-- PROPERTIES -->
 <div class="section">
-<h2>Contact Me</h2>
-<div class="contact-grid">
-
-<a class="contact-item" href="tel:+971567606178">
-<span>📞</span>
-<div><strong>Call Me</strong><br>056 760 6178</div>
-</a>
-
-<a class="contact-item" href="mailto:issamelhag09@gmail.com">
-<span>📧</span>
-<div><strong>Email</strong><br>issamelhag09@gmail.com</div>
-</a>
-
-<a class="contact-item"
-href="https://www.tiktok.com/@realestateaccount007"
-target="_blank">
-<span>🎵</span>
-<div><strong>TikTok</strong><br>@realestateaccount007</div>
-</a>
-
+<h2>Featured Properties</h2>
+<div class="properties property-placeholder">
+Loading properties...
 </div>
 </div>
 
+<!-- FLOATING BUTTON -->
 <a class="whatsapp-float"
 href="https://wa.me/971567606178"
 target="_blank">💬</a>
@@ -284,19 +300,27 @@ target="_blank">💬</a>
 © 2026 Issam Eltayb Real Estate | All Rights Reserved
 </footer>
 
-<!-- SOUND -->
-<audio id="hoverSound"
-src="https://www.soundjay.com/button/sounds/button-16.mp3"
-preload="auto"></audio>
-
 <script>
-const hoverSound = document.getElementById('hoverSound');
-
-document.querySelectorAll('.btn, .contact-item').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{
-    hoverSound.currentTime = 0;
-    hoverSound.play().catch(()=>{});
+// Dynamic properties loader from JSON
+fetch('properties.json')
+.then(res => res.json())
+.then(data => {
+  const container = document.querySelector('.properties');
+  container.innerHTML = '';
+  data.forEach(property => {
+    container.innerHTML += `
+      <div class="property-box">
+        <img src="${property.image}" alt="${property.title}">
+        <h3>${property.title}</h3>
+        <p>${property.price}</p>
+        <a href="${property.whatsapp}" target="_blank" class="btn btn-whatsapp">Inquire Now</a>
+      </div>
+    `;
   });
+})
+.catch(err => {
+  document.querySelector('.properties').innerHTML = 'Failed to load properties.';
+  console.error(err);
 });
 </script>
 
