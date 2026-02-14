@@ -2,37 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Issam Eltayb | UAE Real Estate Consultant</title>
-<meta name="description" content="Issam Eltayb - Professional Real Estate Consultant in Ajman, UAE. Apartments, villas, studios and investment properties with full contract support.">
-<meta name="keywords" content="Ajman real estate, UAE property consultant, apartments for rent Ajman, Issam Eltayb">
-<meta name="author" content="Issam Eltayb">
-
-<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/69/69524.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --primary:#1a1a1a;
-  --secondary:#333333;
   --accent:#d4af37;
   --bg:#1a1a1a;
   --whatsapp:#22c55e;
   --text-light:#f5f5f5;
 }
 
-*{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:'Playfair Display', serif;
   background:var(--bg);
   color:var(--text-light);
-  font-weight:700;
-  scroll-behavior:smooth;
 }
 
 /* HERO */
@@ -45,8 +33,16 @@ body{
   padding:120px 20px;
 }
 
-.hero h1{ font-size:48px; margin:0; }
-.hero p{ font-size:20px; margin-top:15px; opacity:0.9; }
+.hero h1{
+  font-size:48px;
+  margin:0;
+}
+
+.hero p{
+  font-size:20px;
+  margin-top:15px;
+  opacity:0.9;
+}
 
 /* BUTTONS */
 .btn{
@@ -58,16 +54,15 @@ body{
   margin:10px;
   transition:0.3s;
   cursor:pointer;
-  border:none;
 }
 
 .btn-primary{
   background:var(--accent);
-  color:var(--primary);
+  color:#111;
 }
 
 .btn-primary:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
 }
 
 .btn-whatsapp{
@@ -76,7 +71,7 @@ body{
 }
 
 .btn-whatsapp:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
 }
 
 /* SECTION */
@@ -102,7 +97,7 @@ body{
 /* SERVICES */
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
 }
 
@@ -110,71 +105,22 @@ body{
   background:#2c2c2c;
   padding:25px;
   border-radius:14px;
-  transition:0.3s;
+  transition:0.3s ease;
 }
 
 .service-box:hover{
   transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(212,175,55,0.5);
+  box-shadow:0 20px 45px rgba(212,175,55,0.4);
 }
 
-<!-- SERVICES SECTION -->
-<div class="section">
-  <h2>Services I Provide</h2>
+.service-box h3{
+  color:var(--accent);
+}
 
-  <div class="services">
-
-    <div class="service-box">
-      <h3>🏢 Residential Rentals</h3>
-      <p>
-        Apartments, villas, and studios in prime Ajman locations with competitive pricing and flexible annual contracts.
-      </p>
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20would%20like%20to%20ask%20about%20Residential%20Rentals"
-         target="_blank">
-         Ask About This Service
-      </a>
-    </div>
-
-    <div class="service-box">
-      <h3>📈 Investment Consulting</h3>
-      <p>
-        Professional advice on high-return rental properties and strategic real estate investments in the UAE market.
-      </p>
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20would%20like%20to%20ask%20about%20Investment%20Consulting"
-         target="_blank">
-         Ask About This Service
-      </a>
-    </div>
-
-    <div class="service-box">
-      <h3>📝 Full Contract Support</h3>
-      <p>
-        Complete assistance from property viewing to signing contracts, ensuring a smooth and transparent process.
-      </p>
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20would%20like%20to%20ask%20about%20Full%20Contract%20Support"
-         target="_blank">
-         Ask About This Service
-      </a>
-    </div>
-
-    <div class="service-box">
-      <h3>🏗 Property Marketing</h3>
-      <p>
-        Professional marketing services for landlords to rent or sell properties faster through premium platforms.
-      </p>
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20would%20like%20to%20ask%20about%20Property%20Marketing"
-         target="_blank">
-         Ask About This Service
-      </a>
-    </div>
-
-  </div>
-</div>
-
+.service-box p{
+  color:#ddd;
+  line-height:1.6;
+}
 
 /* CONTACT */
 .contact-grid{
@@ -190,17 +136,18 @@ body{
   padding:18px;
   border-radius:14px;
   text-decoration:none;
-  color:var(--text-light);
+  color:white;
   background:#2c2c2c;
   transition:0.3s;
 }
 
 .contact-item:hover{
   transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(212,175,55,0.5);
+  box-shadow:0 15px 35px rgba(212,175,55,0.4);
+  color:var(--accent);
 }
 
-/* FLOAT WHATSAPP */
+/* FLOATING WHATSAPP */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -219,82 +166,139 @@ footer{
   color:var(--accent);
   text-align:center;
   padding:25px;
+  margin-top:60px;
 }
 
+/* MOBILE */
 @media(max-width:768px){
-  .hero h1{font-size:36px;}
-  .hero p{font-size:16px;}
+  .hero h1{ font-size:36px; }
+  .hero p{ font-size:16px; }
+  .contact-grid{ grid-template-columns:1fr; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
 <h1>Issam Eltayb</h1>
 <p>Professional Real Estate Consultant in the UAE</p>
-<a class="btn btn-primary" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">View Listings on Bayut</a>
-<a class="btn btn-whatsapp" href="https://wa.me/971567606178" target="_blank">WhatsApp</a>
+
+<a class="btn btn-primary"
+   href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html"
+   target="_blank">
+   View Listings on Bayut
+</a>
+
+<a class="btn btn-whatsapp"
+   href="https://wa.me/971567606178"
+   target="_blank">
+   WhatsApp
+</a>
 </div>
 
+<!-- ABOUT -->
 <div class="section">
 <div class="card">
 <h2>About Me</h2>
 <p>
-Professional real estate consultant specializing in premium properties in Ajman and across the UAE. Providing rental, investment and contract support services.
+I am Issam Eltayb, a professional real estate consultant in Ajman, UAE.
+I specialize in residential rentals, investment properties, and full contract support,
+ensuring smooth and transparent transactions for clients.
 </p>
 </div>
 </div>
 
+<!-- SERVICES -->
 <div class="section">
-<div class="card" style="text-align:center;">
-<button class="btn btn-primary" id="openDubizzle">View My Listings on Dubizzle</button>
+<h2>Services I Provide</h2>
+
+<div class="services">
+
+<div class="service-box">
+<h3>🏢 Residential Rentals</h3>
+<p>Apartments, villas, and studios in prime Ajman locations with competitive pricing.</p>
+<a class="btn btn-whatsapp"
+href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Residential%20Rentals"
+target="_blank">Ask About This Service</a>
+</div>
+
+<div class="service-box">
+<h3>📈 Investment Consulting</h3>
+<p>Expert guidance on high-return rental properties and smart real estate investments.</p>
+<a class="btn btn-whatsapp"
+href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Investment%20Consulting"
+target="_blank">Ask About This Service</a>
+</div>
+
+<div class="service-box">
+<h3>📝 Full Contract Support</h3>
+<p>Complete assistance from property viewing to contract signing.</p>
+<a class="btn btn-whatsapp"
+href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Full%20Contract%20Support"
+target="_blank">Ask About This Service</a>
+</div>
+
+<div class="service-box">
+<h3>🏗 Property Marketing</h3>
+<p>Marketing solutions for landlords to rent or sell properties faster.</p>
+<a class="btn btn-whatsapp"
+href="https://wa.me/971567606178?text=Hello%20Issam,%20I%20want%20to%20ask%20about%20Property%20Marketing"
+target="_blank">Ask About This Service</a>
+</div>
+
 </div>
 </div>
 
-<div id="dubizzleModal">
-<div class="modal-content">
-<button class="close-btn" id="closeDubizzle">×</button>
-<iframe src="https://uae.dubizzle.com/property-agents/essam-ahmed-184550/"></iframe>
-</div>
-</div>
-
+<!-- CONTACT -->
 <div class="section">
 <h2>Contact Me</h2>
 <div class="contact-grid">
-<a class="contact-item" href="tel:+971567606178">📞 Call Me</a>
-<a class="contact-item" href="mailto:issamelhag09@gmail.com">📧 Email</a>
-<a class="contact-item" href="https://www.tiktok.com/@realestateaccount007" target="_blank">🎵 TikTok</a>
-<a class="contact-item" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">🏠 Bayut</a>
+
+<a class="contact-item" href="tel:+971567606178">
+<span>📞</span>
+<div><strong>Call Me</strong><br>056 760 6178</div>
+</a>
+
+<a class="contact-item" href="mailto:issamelhag09@gmail.com">
+<span>📧</span>
+<div><strong>Email</strong><br>issamelhag09@gmail.com</div>
+</a>
+
+<a class="contact-item"
+href="https://www.tiktok.com/@realestateaccount007"
+target="_blank">
+<span>🎵</span>
+<div><strong>TikTok</strong><br>@realestateaccount007</div>
+</a>
+
 </div>
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/971567606178" target="_blank">💬</a>
+<a class="whatsapp-float"
+href="https://wa.me/971567606178"
+target="_blank">💬</a>
 
 <footer>
 © 2026 Issam Eltayb Real Estate | All Rights Reserved
 </footer>
 
-<audio id="hoverSound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
+<!-- SOUND -->
+<audio id="hoverSound"
+src="https://www.soundjay.com/button/sounds/button-16.mp3"
+preload="auto"></audio>
 
 <script>
 const hoverSound = document.getElementById('hoverSound');
+
 document.querySelectorAll('.btn, .contact-item').forEach(el=>{
   el.addEventListener('mouseenter',()=>{
-    hoverSound.currentTime=0;
+    hoverSound.currentTime = 0;
     hoverSound.play().catch(()=>{});
   });
 });
-
-const modal=document.getElementById('dubizzleModal');
-document.getElementById('openDubizzle').onclick=()=>{
-  modal.style.display='flex';
-};
-document.getElementById('closeDubizzle').onclick=()=>{
-  modal.style.display='none';
-};
 </script>
 
 </body>
 </html>
-
