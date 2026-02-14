@@ -4,15 +4,18 @@
 <meta charset="UTF-8">
 <title>Issam Eltayb | UAE Real Estate Consultant</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
+<!-- TikTok Icon CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 <style>
 :root{
   --primary:#1a1a1a;
-  --accent:#d4af37;
+  --accent:#d4af37; /* gold */
+  --blue:#00c3ff;
+  --green:#22c55e;
+  --tiktok-red:#ff0050;
+  --tiktok-teal:#00f2ea;
   --bg:#1a1a1a;
-  --whatsapp:#22c55e;
   --text-light:#f5f5f5;
 }
 
@@ -33,26 +36,78 @@ body{
   text-align:center;
   padding:120px 20px;
 }
-
 .hero h1{ font-size:48px; margin:0; }
 .hero p{ font-size:20px; margin-top:15px; opacity:0.9; }
 
-.btn{
-  display:inline-block;
-  padding:14px 30px;
-  border-radius:50px;
-  text-decoration:none;
+/* HEADER BUTTONS - FIT TEXT SIZE */
+.hero .btn {
+  position: relative;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:14px 28px;    
+  font-size:20px;       
+  border-radius:25px;   
   font-weight:700;
   margin:10px;
-  transition:0.3s;
+  overflow:hidden;
+  min-width:auto;       
+  min-height:60px;      
+  color:#fff;
+  transition:0.4s;
+  box-shadow:0 6px 18px rgba(212,175,55,0.3);
+  z-index:1;
 }
 
-.btn-primary{ background:var(--accent); color:#111; }
-.btn-whatsapp{ background:var(--whatsapp); color:white; }
+/* Gradient overlay for spreading effect */
+.hero .btn::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%; height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
+  transform: skewX(-20deg);
+  transition:0.6s;
+  z-index:0;
+}
+.hero .btn:hover::before{ left:100%; }
+.hero .btn span{ position: relative; z-index:2; }
 
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 15px 35px rgba(212,175,55,0.4);
+/* HEADER BUTTON COLORS AND PULSE */
+.hero .btn-primary{
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  color:#111;
+  animation: pulseGold 2.5s infinite;
+}
+.hero .btn-whatsapp{
+  background: var(--green);
+  border:2px solid var(--green);
+  animation: pulseGreen 2.5s infinite;
+}
+
+/* PULSE KEYFRAMES */
+@keyframes pulseGold{
+  0%{ box-shadow:0 0 0 0 rgba(212,175,55,0.6); }
+  70%{ box-shadow:0 0 0 18px rgba(212,175,55,0); }
+  100%{ box-shadow:0 0 0 0 rgba(212,175,55,0); }
+}
+@keyframes pulseBlue{
+  0%{ box-shadow:0 0 0 0 rgba(0,195,255,0.6); }
+  70%{ box-shadow:0 0 0 18px rgba(0,195,255,0); }
+  100%{ box-shadow:0 0 0 0 rgba(0,195,255,0); }
+}
+@keyframes pulseGreen{
+  0%{ box-shadow:0 0 0 0 rgba(34,197,94,0.6); }
+  70%{ box-shadow:0 0 0 18px rgba(34,197,94,0); }
+  100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
+}
+@keyframes pulseTikTok{
+  0%{ box-shadow:0 0 0 0 rgba(255,0,80,0.6); }
+  70%{ box-shadow:0 0 0 18px rgba(255,0,80,0); }
+  100%{ box-shadow:0 0 0 0 rgba(255,0,80,0); }
 }
 
 /* SECTION */
@@ -61,7 +116,6 @@ body{
   margin:70px auto;
   padding:0 20px;
 }
-
 .section h2{
   color:var(--accent);
   margin-bottom:30px;
@@ -120,116 +174,73 @@ body{
   border-radius: 12px;
   margin-bottom: 15px;
 }
-.property-box h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: var(--accent);
-}
-.property-box p {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #ddd;
-  font-weight: 500;
-}
-.property-box .btn-whatsapp {
-  align-self: flex-start;
-  margin-top: auto;
-}
+.property-box h3 { font-size: 20px; margin-bottom: 8px; color: var(--accent); }
+.property-box p { font-size: 18px; margin-bottom: 15px; color: #ddd; font-weight: 500; }
+.property-box .btn-whatsapp { align-self: flex-start; margin-top: auto; }
 
-/* CONTACT FLOATING SECTION */
-.contact-float{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  z-index:9999;
+/* CONTACT SECTION */
+.contact-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-top:40px;
 }
-
 .contact-item{
   display:flex;
+  justify-content:center;
   align-items:center;
-  gap:12px;
-  padding:16px 22px;
-  border-radius:16px;
+  text-align:center;
+  padding:25px;
+  border-radius:18px;
   text-decoration:none;
-  color:white;
-  font-size:16px;
-  font-weight:600;
-  transition:0.3s ease;
+  font-size:18px;
   position:relative;
   overflow:hidden;
+  min-height:70px;
 }
-
-/* Call Button - Luxury Gradient + Neon hover */
-.contact-call{
-  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
-  border:1px solid var(--accent);
-  box-shadow:0 4px 12px rgba(212,175,55,0.4);
-}
-
-.contact-call:hover{
-  background:var(--accent);
-  color:#111;
-  transform:translateY(-6px);
-  box-shadow:0 0 12px var(--accent),0 0 25px var(--accent);
-}
-
-/* Email Button - Luxury Gradient + Neon hover */
-.contact-email{
-  background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
-  border:1px solid #00c3ff;
-  box-shadow:0 4px 12px rgba(0,195,255,0.4);
-}
-
-.contact-email:hover{
-  background:#00c3ff;
-  color:#111;
-  transform:translateY(-6px);
-  box-shadow:0 0 12px #00c3ff,0 0 25px #00c3ff;
-}
-
-/* TikTok Special */
-.tiktok-special{
-  background:#000;
-  border:2px solid #ff0050;
-  animation:pulseTikTok 2.5s infinite;
-}
-
-.tiktok-special img{
-  width:26px;
-  height:26px;
-  border-radius:4px;
-}
-
-.tiktok-special::before{
+.contact-item::before{
   content:'';
   position:absolute;
   top:0;
   left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,#00f2ea,transparent);
+  width:100%; height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
+  transform: skewX(-20deg);
   transition:0.6s;
+  z-index:0;
 }
+.contact-item:hover::before{ left:100%; }
+.contact-item span{ position: relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:10px; }
 
-.tiktok-special:hover::before{
-  left:100%;
+/* Colors and pulse synced to border color */
+.contact-call{ 
+  background:linear-gradient(135deg,#1f1f1f,#2a2a2a); 
+  border:1px solid var(--accent); 
+  color:#fff; 
+  animation:pulseGold 2.5s infinite;
 }
+.contact-call:hover{ background:var(--accent); color:#111; transform:translateY(-8px); }
 
-.tiktok-special:hover{
-  box-shadow:0 0 25px #ff0050, 0 0 50px #00f2ea;
-  transform:translateY(-6px);
+.contact-email{ 
+  background:linear-gradient(135deg,#1f1f1f,#2a2a2a); 
+  border:1px solid #00c3ff; 
+  color:#fff; 
+  animation:pulseBlue 2.5s infinite;
 }
+.contact-email:hover{ box-shadow:0 0 20px #00c3ff; transform:translateY(-8px); }
 
-@keyframes pulseTikTok{
-  0%{ box-shadow:0 0 0 0 rgba(255,0,80,0.6); }
-  70%{ box-shadow:0 0 0 18px rgba(255,0,80,0); }
-  100%{ box-shadow:0 0 0 0 rgba(255,0,80,0); }
+.tiktok-special{ 
+  background:#000; 
+  border:2px solid var(--tiktok-red); 
+  color:#fff; 
+  animation:pulseTikTok 2.5s infinite;
+  font-weight:700;
+  font-size:18px;
 }
+.tiktok-special::before{ background:linear-gradient(120deg,transparent,#00f2ea,transparent); }
+.tiktok-special:hover{ box-shadow:0 0 25px var(--tiktok-red),0 0 50px var(--tiktok-teal); transform:translateY(-8px); }
 
-/* FOOTER */
+/* Footer */
 footer{
   background:#111;
   color:var(--accent);
@@ -240,6 +251,7 @@ footer{
 
 @media(max-width:768px){
   .hero h1{ font-size:36px; }
+  .contact-grid{ grid-template-columns:1fr; justify-items:center; }
 }
 </style>
 </head>
@@ -247,53 +259,45 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-<h1>Issam Eltayb</h1>
-<p>Professional Real Estate Consultant in the UAE</p>
-<a class="btn btn-primary"
-href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html"
-target="_blank">View Listings on Bayut</a>
-<a class="btn btn-whatsapp"
-href="https://wa.me/971567606178"
-target="_blank">WhatsApp</a>
+  <h1>Issam Eltayb</h1>
+  <p>Professional Real Estate Agent in the UAE</p>
+  <a class="btn btn-primary" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank"><span>View Listings on Bayut</span></a>
+  <a class="btn btn-whatsapp" href="https://wa.me/971567606178" target="_blank"><span>WhatsApp</span></a>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
-<div class="card">
-<h2>About Me</h2>
-<p>I am Issam Eltayb, a professional real estate consultant in Ajman, UAE.
-I specialize in residential rentals, investment properties, and full contract support.</p>
-</div>
+  <div class="card">
+    <h2>About Me</h2>
+    <p>I am Issam Eltayb, a professional real estate agent based in Ajman, UAE, helping clients buy, sell, and rent properties with ease. I specialize in finding the right home or investment and provide personalized, trustworthy guidance every step of the way.</p>
+  </div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
-<h2>Services I Provide</h2>
-<div class="services">
-<div class="service-box"><h3>🏢 Residential Rentals</h3><p>Apartments, villas, and studios in prime Ajman locations.</p></div>
-<div class="service-box"><h3>📈 Investment Consulting</h3><p>High-return property investment guidance.</p></div>
-<div class="service-box"><h3>📝 Full Contract Support</h3><p>Complete assistance from viewing to contract signing.</p></div>
-<div class="service-box"><h3>🏗 Property Marketing</h3><p>Professional marketing for landlords.</p></div>
-</div>
+  <h2>Services I Provide</h2>
+  <div class="services">
+    <div class="service-box"><h3>🏢 Residential Rentals</h3><p>Apartments, villas, and studios in prime Ajman locations.</p></div>
+    <div class="service-box"><h3>📈 Investment Consulting</h3><p>High-return property investment guidance.</p></div>
+    <div class="service-box"><h3>📝 Full Contract Support</h3><p>Complete assistance from viewing to contract signing.</p></div>
+    <div class="service-box"><h3>🏗 Property Marketing</h3><p>Professional marketing for landlords.</p></div>
+  </div>
 </div>
 
 <!-- PROPERTIES -->
 <div class="section">
-<h2>Featured Properties</h2>
-<div class="properties property-placeholder">Loading properties...</div>
+  <h2>Featured Properties</h2>
+  <div class="properties property-placeholder">Loading properties...</div>
 </div>
 
-<!-- FLOATING CONTACT SECTION -->
-<div class="contact-float">
-<a class="contact-item contact-call" href="tel:+971567606178">📞 <div><strong>Call Me</strong><br>056 760 6178</div></a>
-<a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com">📧 <div><strong>Email Me</strong><br>issamelhag09@gmail.com</div></a>
-<a class="contact-item tiktok-special" href="https://www.tiktok.com/@realestateaccount007" target="_blank">
-<img src="https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg?semt=ais_user_personalization&w=740&q=80" alt="TikTok">
-<div><strong>Follow on TikTok</strong><br>@realestateaccount007</div></a>
+<!-- CONTACT SECTION -->
+<div class="section contact-grid">
+  <a class="contact-item contact-call" href="tel:+971567606178"><span>🤙 Call Me<br>056 760 6178</span></a>
+  <a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com"><span>📧 Email Me<br>issamelhag09@gmail.com</span></a>
+  <a class="contact-item tiktok-special" href="https://www.tiktok.com/@realestateaccount007" target="_blank">
+    <span><i class="fab fa-tiktok"></i> Follow on TikTok<br>@realestateaccount007</span>
+  </a>
 </div>
-
-<!-- FLOATING WHATSAPP -->
-<a class="whatsapp-float" href="https://wa.me/971567606178" target="_blank">💬</a>
 
 <footer>© 2026 Issam Eltayb Real Estate | All Rights Reserved</footer>
 
@@ -310,7 +314,7 @@ fetch('properties.json')
         <img src="${property.image}" alt="${property.title}">
         <h3>${property.title}</h3>
         <p>${property.price}</p>
-        <a href="${property.whatsapp}" target="_blank" class="btn btn-whatsapp">Inquire Now</a>
+        <a href="${property.whatsapp}" target="_blank" class="btn btn-whatsapp"><span>Inquire Now</span></a>
       </div>
     `;
   });
