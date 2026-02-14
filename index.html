@@ -102,7 +102,6 @@ body{
   background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
   border:1px solid var(--accent);
 }
-
 .contact-call:hover{
   background:var(--accent);
   color:#111;
@@ -114,7 +113,6 @@ body{
   background:linear-gradient(135deg,#1f1f1f,#2a2a2a);
   border:1px solid #00c3ff;
 }
-
 .contact-email:hover{
   box-shadow:0 0 20px #00c3ff;
   transform:translateY(-8px);
@@ -126,7 +124,6 @@ body{
   border:2px solid #ff0050;
   animation:pulseTikTok 2.5s infinite;
 }
-
 .tiktok-special::before{
   content:'';
   position:absolute;
@@ -137,49 +134,77 @@ body{
   background:linear-gradient(120deg,transparent,#00f2ea,transparent);
   transition:0.6s;
 }
-
 .tiktok-special:hover::before{
   left:100%;
 }
-
 .tiktok-special:hover{
   box-shadow:0 0 25px #ff0050, 0 0 50px #00f2ea;
   transform:translateY(-8px);
 }
-
 @keyframes pulseTikTok{
   0%{ box-shadow:0 0 0 0 rgba(255,0,80,0.6); }
   70%{ box-shadow:0 0 0 18px rgba(255,0,80,0); }
   100%{ box-shadow:0 0 0 0 rgba(255,0,80,0); }
 }
 
-/* SERVICES & PROPERTIES */
-.services, .properties{
+/* SERVICES */
+.services {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
 }
-
-.service-box, .property-box{
+.service-box {
   background:#2c2c2c;
   padding:30px;
   border-radius:16px;
   transition:0.3s;
 }
-
-.service-box:hover, .property-box:hover{
+.service-box:hover{
   transform:translateY(-8px);
   box-shadow:0 20px 45px rgba(212,175,55,0.4);
 }
 
-/* PROPERTY SPACE */
-.property-placeholder{
-  padding:60px;
-  text-align:center;
-  border:2px dashed var(--accent);
-  border-radius:20px;
-  color:#bbb;
-  font-size:20px;
+/* PROPERTIES */
+.properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top:20px;
+}
+.property-box {
+  background: #2c2c2c;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+.property-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(212,175,55,0.4);
+}
+.property-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.property-box h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+.property-box p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ddd;
+  font-weight: 500;
+}
+.property-box .btn-whatsapp {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 /* FLOATING */
@@ -209,54 +234,33 @@ footer{
 }
 </style>
 </head>
-
 <body>
 
 <!-- HERO -->
 <div class="hero">
 <h1>Issam Eltayb</h1>
-<p>Professional Real Estate Consultant in the UAE</p>
-
+<p>Professional Real Estate Agent in the UAE</p>
 <a class="btn btn-primary"
 href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html"
-target="_blank">
-View Listings on Bayut
-</a>
-
+target="_blank">View Listings on Bayut</a>
 <a class="btn btn-whatsapp"
 href="https://wa.me/971567606178"
-target="_blank">
-WhatsApp
-</a>
+target="_blank">WhatsApp</a>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
 <div class="card">
 <h2>About Me</h2>
-<p>
-I am Issam Eltayb, a professional real estate consultant in Ajman, UAE.
-I specialize in residential rentals, investment properties, and full contract support.
-</p>
+<p>I am Issam Eltayb, a professional real estate Agent in Ajman, UAE.
+I specialize in residential rentals, investment properties, and full contract support.</p>
 </div>
 
 <!-- CONTACT UNDER ABOUT -->
 <div class="contact-grid">
-
-<a class="contact-item contact-call" href="tel:+971567606178">
-📞 <div><strong>Call Me</strong><br>056 760 6178</div>
-</a>
-
-<a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com">
-📧 <div><strong>Email Me</strong><br>issamelhag09@gmail.com</div>
-</a>
-
-<a class="contact-item tiktok-special"
-href="https://www.tiktok.com/@realestateaccount007"
-target="_blank">
-🎵 <div><strong>Follow on TikTok</strong><br>@realestateaccount007</div>
-</a>
-
+<a class="contact-item contact-call" href="tel:+971567606178">📞 <div><strong>Call Me</strong><br>056 760 6178</div></a>
+<a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com">📧 <div><strong>Email Me</strong><br>issamelhag09@gmail.com</div></a>
+<a class="contact-item tiktok-special" href="https://www.tiktok.com/@realestateaccount007" target="_blank">🎵 <div><strong>Follow on TikTok</strong><br>@realestateaccount007</div></a>
 </div>
 </div>
 
@@ -264,44 +268,26 @@ target="_blank">
 <div class="section">
 <h2>Services I Provide</h2>
 <div class="services">
-<div class="service-box">
-<h3>🏢 Residential Rentals</h3>
-<p>Apartments, villas, and studios in prime Ajman locations.</p>
-</div>
-<div class="service-box">
-<h3>📈 Investment Consulting</h3>
-<p>High-return property investment guidance.</p>
-</div>
-<div class="service-box">
-<h3>📝 Full Contract Support</h3>
-<p>Complete assistance from viewing to contract signing.</p>
-</div>
-<div class="service-box">
-<h3>🏗 Property Marketing</h3>
-<p>Professional marketing for landlords.</p>
-</div>
+<div class="service-box"><h3>🏢 Residential Rentals</h3><p>Apartments, villas, and studios in prime Ajman locations.</p></div>
+<div class="service-box"><h3>📈 Investment Consulting</h3><p>High-return property investment guidance.</p></div>
+<div class="service-box"><h3>📝 Full Contract Support</h3><p>Complete assistance from viewing to contract signing.</p></div>
+<div class="service-box"><h3>🏗 Property Marketing</h3><p>Professional marketing for landlords.</p></div>
 </div>
 </div>
 
 <!-- PROPERTIES -->
 <div class="section">
 <h2>Featured Properties</h2>
-<div class="properties property-placeholder">
-Loading properties...
-</div>
+<div class="properties property-placeholder">Loading properties...</div>
 </div>
 
-<!-- FLOATING BUTTON -->
-<a class="whatsapp-float"
-href="https://wa.me/971567606178"
-target="_blank">💬</a>
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/971567606178" target="_blank">💬</a>
 
-<footer>
-© 2026 Issam Eltayb Real Estate | All Rights Reserved
-</footer>
+<footer>© 2026 Issam Eltayb Real Estate | All Rights Reserved</footer>
 
+<!-- JS: Load Properties -->
 <script>
-// Dynamic properties loader from JSON
 fetch('properties.json')
 .then(res => res.json())
 .then(data => {
