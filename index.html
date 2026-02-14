@@ -2,234 +2,253 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Issam Eltayb | UAE Real Estate Consultant</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Issam Eltayb - Professional Real Estate Consultant in Ajman, UAE. Apartments, villas, studios and investment properties with full contract support.">
+<meta name="keywords" content="Ajman real estate, UAE property consultant, apartments for rent Ajman, Issam Eltayb">
+<meta name="author" content="Issam Eltayb">
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/69/69524.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
 :root{
---primary:#0d47a1;
---secondary:#1565c0;
---accent:#d4af37;
---bg:#f4f6f9;
---whatsapp:#25D366;
+  --primary:#1a1a1a;
+  --secondary:#333333;
+  --accent:#d4af37;
+  --bg:#1a1a1a;
+  --whatsapp:#22c55e;
+  --text-light:#f5f5f5;
 }
 
+*{box-sizing:border-box}
+
 body{
-margin:0;
-font-family:'Segoe UI',Arial;
-background:var(--bg);
-color:#333;
+  margin:0;
+  font-family:'Playfair Display', serif;
+  background:var(--bg);
+  color:var(--text-light);
+  font-weight:700;
+  scroll-behavior:smooth;
 }
 
 /* HERO */
 .hero{
-background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url('https://images.unsplash.com/photo-1560518883-ce09059eeffa');
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:120px 20px;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80');
+  background-size:cover;
+  background-position:center;
+  text-align:center;
+  padding:120px 20px;
 }
 
-.hero h1{
-font-size:40px;
-margin:0;
-}
+.hero h1{ font-size:48px; margin:0; }
+.hero p{ font-size:20px; margin-top:15px; opacity:0.9; }
 
-.hero p{
-font-size:18px;
-margin-top:15px;
-opacity:0.9;
-}
-
+/* BUTTONS */
 .btn{
-display:inline-block;
-padding:14px 25px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-margin:10px;
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:700;
+  margin:10px;
+  transition:0.3s;
+  cursor:pointer;
+  border:none;
 }
 
 .btn-primary{
-background:var(--accent);
-color:black;
+  background:var(--accent);
+  color:var(--primary);
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
 }
 
 .btn-whatsapp{
-background:var(--whatsapp);
-color:white;
+  background:var(--whatsapp);
+  color:white;
+}
+
+.btn-whatsapp:hover{
+  transform:translateY(-2px);
 }
 
 /* SECTION */
 .section{
-max-width:1100px;
-margin:60px auto;
-padding:0 20px;
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 20px;
 }
 
 .card{
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-margin-bottom:40px;
+  background:#222;
+  padding:35px;
+  border-radius:15px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.5);
+  margin-bottom:40px;
 }
 
 .section h2{
-color:var(--primary);
-margin-bottom:25px;
+  color:var(--accent);
+  margin-bottom:25px;
 }
 
 /* SERVICES */
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 
 .service-box{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  background:#2c2c2c;
+  padding:25px;
+  border-radius:14px;
+  transition:0.3s;
 }
 
-/* PROPERTIES */
-.properties{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+.service-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(212,175,55,0.5);
 }
 
-.property{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+/* MODAL */
+#dubizzleModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
 }
 
-.property img{
-width:100%;
-height:200px;
-object-fit:cover;
+.modal-content{
+  position:relative;
+  width:90%;
+  max-width:1000px;
+  height:80%;
+  background:#111;
+  border-radius:15px;
+  overflow:hidden;
 }
 
-.property-content{
-padding:20px;
+.modal-content iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+.close-btn{
+  position:absolute;
+  top:10px;
+  right:15px;
+  background:var(--accent);
+  color:#111;
+  border:none;
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  font-size:22px;
+  cursor:pointer;
 }
 
 /* CONTACT */
-.contact-info{
-line-height:2;
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
-/* FLOATING WHATSAPP */
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:18px;
+  border-radius:14px;
+  text-decoration:none;
+  color:var(--text-light);
+  background:#2c2c2c;
+  transition:0.3s;
+}
+
+.contact-item:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(212,175,55,0.5);
+}
+
+/* FLOAT WHATSAPP */
 .whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:var(--whatsapp);
-color:white;
-padding:15px 18px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--whatsapp);
+  color:white;
+  padding:15px 18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
 }
 
 /* FOOTER */
 footer{
-background:var(--primary);
-color:white;
-text-align:center;
-padding:25px;
-margin-top:60px;
+  background:#111;
+  color:var(--accent);
+  text-align:center;
+  padding:25px;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:36px;}
+  .hero p{font-size:16px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
 <h1>Issam Eltayb</h1>
 <p>Professional Real Estate Consultant in the UAE</p>
-<a class="btn btn-primary" href="#properties">View Properties</a>
+<a class="btn btn-primary" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">View Listings on Bayut</a>
 <a class="btn btn-whatsapp" href="https://wa.me/971567606178" target="_blank">WhatsApp</a>
 </div>
 
-<!-- ABOUT -->
 <div class="section">
 <div class="card">
 <h2>About Me</h2>
 <p>
-I am Issam Eltayb, a dedicated real estate consultant in the United Arab Emirates, specializing in premium residential and investment properties in Ajman. I provide apartments, villas, and studios in prime locations with competitive pricing and complete contract support. My focus is delivering transparent service, fast response, and long-term client relationships built on trust and results.
+Professional real estate consultant specializing in premium properties in Ajman and across the UAE. Providing rental, investment and contract support services.
 </p>
 </div>
 </div>
 
-<!-- SERVICES -->
 <div class="section">
-<h2>My Services</h2>
-<div class="services">
-<div class="service-box">
-<h3>Residential Rentals</h3>
-<p>Apartments, studios, and villas in prime Ajman locations.</p>
-</div>
-<div class="service-box">
-<h3>Investment Consulting</h3>
-<p>Helping investors secure high-return rental properties.</p>
-</div>
-<div class="service-box">
-<h3>Full Contract Support</h3>
-<p>From viewing to signing — complete assistance.</p>
-</div>
+<div class="card" style="text-align:center;">
+<button class="btn btn-primary" id="openDubizzle">View My Listings on Dubizzle</button>
 </div>
 </div>
 
-<!-- PROPERTIES -->
-<div class="section" id="properties">
-<h2>Featured Properties</h2>
-
-<div class="properties">
-
-<!-- PROPERTY 1 -->
-<div class="property">
-<img src="https://images.bayut.com/thumbnails/821777428-800x600.webp">
-<div class="property-content">
-<h3>A well-designed two-bedroom apartment with living room, two bathrooms, and a balcony is available for annual rent in Al Rashidiya 2 – Ajman</h3>
-<p>34,000 AED Yearly</p>
-<a class="btn btn-whatsapp" href="https://wa.me/971567606178" target="_blank">Inquire</a>
+<div id="dubizzleModal">
+<div class="modal-content">
+<button class="close-btn" id="closeDubizzle">×</button>
+<iframe src="https://uae.dubizzle.com/property-agents/essam-ahmed-184550/"></iframe>
 </div>
 </div>
 
-<!-- PROPERTY 2 -->
-<div class="property">
-<img src="https://images.bayut.com/thumbnails/818036950-1066x800.webp">
-<div class="property-content">
-<h3>Studio – Prime Location garden residence ajman</h3>
-<p>26,000 AED Yearly</p>
-<a class="btn btn-whatsapp" href="https://wa.me/971567606178" target="_blank">Inquire</a>
-</div>
-</div>
-
-<!-- 🔥 ADD NEW PROPERTY HERE -->
-<!-- Copy property block and paste below -->
-
-</div>
-</div>
-
-<!-- CONTACT -->
 <div class="section">
-<div class="card">
 <h2>Contact Me</h2>
-<div class="contact-info">
-📞 Phone: 0567606178<br>
-📧 Email: issamelhag09@gmail.com<br>
-🎵 TikTok: <a href="https://www.tiktok.com/@realestateaccount007?is_from_webapp=1&sender_device=pc" target="_blank">Visit TikTok</a><br>
-🏠 Bayut: <a href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">View Profile</a>
-</div>
+<div class="contact-grid">
+<a class="contact-item" href="tel:+971567606178">📞 Call Me</a>
+<a class="contact-item" href="mailto:issamelhag09@gmail.com">📧 Email</a>
+<a class="contact-item" href="https://www.tiktok.com/@realestateaccount007" target="_blank">🎵 TikTok</a>
+<a class="contact-item" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">🏠 Bayut</a>
 </div>
 </div>
 
@@ -238,6 +257,26 @@ I am Issam Eltayb, a dedicated real estate consultant in the United Arab Emirate
 <footer>
 © 2026 Issam Eltayb Real Estate | All Rights Reserved
 </footer>
+
+<audio id="hoverSound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
+
+<script>
+const hoverSound = document.getElementById('hoverSound');
+document.querySelectorAll('.btn, .contact-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    hoverSound.currentTime=0;
+    hoverSound.play().catch(()=>{});
+  });
+});
+
+const modal=document.getElementById('dubizzleModal');
+document.getElementById('openDubizzle').onclick=()=>{
+  modal.style.display='flex';
+};
+document.getElementById('closeDubizzle').onclick=()=>{
+  modal.style.display='none';
+};
+</script>
 
 </body>
 </html>
