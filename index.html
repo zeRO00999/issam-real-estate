@@ -2,288 +2,276 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#0f0f0f">
 <title>Issam Eltayb | UAE Real Estate Consultant</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
 <style>
+
+/* ========= LUXURY COLOR SYSTEM ========= */
 :root{
-  --primary:#1a1a1a;
-  --accent:#d4af37; /* gold */
-  --blue:#00c3ff;
-  --green:#22c55e;
-  --tiktok-red:#ff0050;
-  --tiktok-teal:#00f2ea;
-  --bg:#1a1a1a;
-  --text-light:#f5f5f5;
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --soft:#242424;
+  --gold:#c9a227;
+  --gold-light:#e6c35c;
+  --accent:#d4af37;
+  --green:#25D366;
+  --blue:#3abff8;
+  --text:#f5f5f5;
+  --muted:#bdbdbd;
 }
 
-/* BODY */
+/* ========= GLOBAL ========= */
 body{
   margin:0;
-  font-family:'Playfair Display', serif;
   background:var(--bg);
-  color:var(--text-light);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* HERO */
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  letter-spacing:1px;
+}
+
+.section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+.section h2{
+  text-align:center;
+  color:var(--gold-light);
+  margin-bottom:40px;
+  font-size:32px;
+}
+
+/* ========= HERO ========= */
 .hero{
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  background:
+  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
   url('https://mawjan-residence.ae/images/intro_bg_desktop.webp');
   background-size:cover;
   background-position:center;
   text-align:center;
   padding:120px 20px;
 }
-.hero h1{ font-size:48px; margin:0; }
-.hero p{ font-size:20px; margin-top:15px; opacity:0.9; }
 
-/* HEADER BUTTONS - FIT TEXT SIZE */
-.hero .btn {
-  position: relative;
+.hero h1{
+  font-size:48px;
+  margin:0;
+}
+
+.hero p{
+  margin-top:15px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* HERO BUTTONS */
+.btn{
   display:inline-flex;
   justify-content:center;
   align-items:center;
-  text-align:center;
-  padding:14px 28px;    
-  font-size:20px;       
-  border-radius:25px;   
-  font-weight:700;
-  margin:10px;
-  overflow:hidden;
-  min-width:auto;       
-  min-height:60px;      
-  color:#fff;
-  transition:0.4s;
-  box-shadow:0 6px 18px rgba(212,175,55,0.3);
-  z-index:1;
-}
-
-/* Gradient overlay for spreading effect */
-.hero .btn::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%; height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
-  transform: skewX(-20deg);
-  transition:0.6s;
-  z-index:0;
-}
-.hero .btn:hover::before{ left:100%; }
-.hero .btn span{ position: relative; z-index:2; }
-
-/* HEADER BUTTON COLORS AND PULSE */
-.hero .btn-primary{
-  background: var(--accent);
-  border: 2px solid var(--accent);
-  color:#111;
-  animation: pulseGold 2.5s infinite;
-}
-.hero .btn-whatsapp{
-  background: var(--green);
-  border:2px solid var(--green);
-  animation: pulseGreen 2.5s infinite;
-}
-
-/* PULSE KEYFRAMES */
-@keyframes pulseGold{
-  0%{ box-shadow:0 0 0 0 rgba(212,175,55,0.6); }
-  70%{ box-shadow:0 0 0 18px rgba(212,175,55,0); }
-  100%{ box-shadow:0 0 0 0 rgba(212,175,55,0); }
-}
-@keyframes pulseBlue{
-  0%{ box-shadow:0 0 0 0 rgba(0,195,255,0.6); }
-  70%{ box-shadow:0 0 0 18px rgba(0,195,255,0); }
-  100%{ box-shadow:0 0 0 0 rgba(0,195,255,0); }
-}
-@keyframes pulseGreen{
-  0%{ box-shadow:0 0 0 0 rgba(34,197,94,0.6); }
-  70%{ box-shadow:0 0 0 18px rgba(34,197,94,0); }
-  100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
-}
-@keyframes pulseTikTok{
-  0%{ box-shadow:0 0 0 0 rgba(255,0,80,0.6); }
-  70%{ box-shadow:0 0 0 18px rgba(255,0,80,0); }
-  100%{ box-shadow:0 0 0 0 rgba(255,0,80,0); }
-}
-
-/* SECTION */
-.section{
-  max-width:1200px;
-  margin:70px auto;
-  padding:0 20px;
-}
-.section h2{
-  color:var(--accent);
-  margin-bottom:30px;
-  text-align:center;
-}
-
-/* ABOUT */
-.card{
-  background:#222;
-  padding:40px;
-  border-radius:16px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.6);
-}
-
-/* SERVICES */
-.services {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-}
-.service-box {
-  background:#2c2c2c;
-  padding:30px;
-  border-radius:16px;
-  transition:0.3s;
-}
-.service-box:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(212,175,55,0.4);
-}
-
-/* PROPERTIES */
-.properties {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top:20px;
-}
-.property-box {
-  background: #2c2c2c;
-  border-radius: 16px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: 0.3s;
-}
-.property-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(212,175,55,0.4);
-}
-.property-box img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-.property-box h3 { font-size: 20px; margin-bottom: 8px; color: var(--accent); }
-.property-box p { font-size: 18px; margin-bottom: 15px; color: #ddd; font-weight: 500; }
-
-/* INQUIRE BUTTON - same as header WhatsApp */
-.btn-inquire {
-  position: relative;
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:14px 28px;
-  font-size:18px;
-  border-radius:25px;
-  font-weight:700;
-  color:#fff;
+  padding:14px 32px;
+  border-radius:30px;
+  font-weight:600;
   text-decoration:none;
-  margin-top:10px;
-  overflow:hidden;
-  border:2px solid var(--green);
-  background:var(--green);
-  animation:pulseGreen 2.5s infinite;
-}
-.btn-inquire::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%; height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
-  transform: skewX(-20deg);
-  transition:0.6s;
-  z-index:0;
-}
-.btn-inquire:hover::before{ left:100%; }
-.btn-inquire span{ position:relative; z-index:2; }
-
-/* CONTACT SECTION */
-.contact-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
-.contact-item{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:25px;
-  border-radius:18px;
-  text-decoration:none;
-  font-size:18px;
+  margin:15px 10px 0;
+  transition:.3s ease;
   position:relative;
   overflow:hidden;
-  min-height:70px;
 }
-.contact-item::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%; height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
-  transform: skewX(-20deg);
-  transition:0.6s;
-  z-index:0;
-}
-.contact-item:hover::before{ left:100%; }
-.contact-item span{ position: relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:10px; }
 
-/* Colors and pulse synced to border color */
-.contact-call{ 
-  background:linear-gradient(135deg,#1f1f1f,#2a2a2a); 
-  border:1px solid var(--accent); 
-  color:#fff; 
-  animation:pulseGold 2.5s infinite;
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:#111;
+  box-shadow:0 10px 25px rgba(212,175,55,.35);
 }
-.contact-call:hover{ background:var(--accent); color:#111; transform:translateY(-8px); }
 
-.contact-email{ 
-  background:linear-gradient(135deg,#1f1f1f,#2a2a2a); 
-  border:1px solid #00c3ff; 
-  color:#fff; 
-  animation:pulseBlue 2.5s infinite;
+.btn-gold:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(212,175,55,.6);
 }
-.contact-email:hover{ box-shadow:0 0 20px #00c3ff; transform:translateY(-8px); }
 
-.tiktok-special{ 
-  background:#000; 
-  border:2px solid var(--tiktok-red); 
-  color:#fff; 
-  animation:pulseTikTok 2.5s infinite;
-  font-weight:700;
-  font-size:18px;
+.btn-green{
+  background:var(--green);
+  color:#fff;
+  box-shadow:0 10px 25px rgba(37,211,102,.35);
 }
-.tiktok-special::before{ background:linear-gradient(120deg,transparent,#00f2ea,transparent); }
-.tiktok-special:hover{ box-shadow:0 0 25px var(--tiktok-red),0 0 50px var(--tiktok-teal); transform:translateY(-8px); }
 
-/* Footer */
-footer{
-  background:#111;
-  color:var(--accent);
+.btn-green:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(37,211,102,.6);
+}
+
+/* ========= ABOUT ========= */
+.card{
+  background:var(--card);
+  padding:50px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
   text-align:center;
-  padding:25px;
-  margin-top:60px;
+  line-height:1.7;
+  font-size:17px;
+  color:var(--muted);
 }
 
-@media(max-width:768px){
-  .hero h1{ font-size:36px; }
-  .contact-grid{ grid-template-columns:1fr; justify-items:center; }
+/* ========= SERVICES ========= */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
+
+.service-box{
+  background:var(--card);
+  padding:35px;
+  border-radius:18px;
+  transition:.3s;
+}
+
+.service-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(212,175,55,.4);
+}
+
+.service-box h3{
+  color:var(--gold-light);
+  margin-bottom:10px;
+}
+
+/* ========= PROPERTIES ========= */
+.properties{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.property-box{
+  background:var(--card);
+  border-radius:20px;
+  padding:20px;
+  transition:.3s;
+}
+
+.property-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 30px rgba(212,175,55,.4);
+}
+
+.property-box img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.property-box h3{
+  color:var(--gold-light);
+}
+
+.property-box p{
+  color:var(--muted);
+  margin:10px 0;
+}
+
+.btn-inquire{
+  background:var(--green);
+  color:#fff;
+  padding:12px;
+  border-radius:25px;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn-inquire:hover{
+  box-shadow:0 0 20px rgba(37,211,102,.6);
+}
+
+/* ========= CONTACT ========= */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.contact-item{
+  background:var(--card);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+  color:var(--text);
+}
+
+.contact-call{
+  border:1px solid var(--gold);
+}
+
+.contact-call:hover{
+  background:var(--gold);
+  color:#111;
+  box-shadow:0 0 20px rgba(212,175,55,.6);
+}
+
+.contact-email{
+  border:1px solid var(--blue);
+}
+
+.contact-email:hover{
+  background:var(--blue);
+  color:#111;
+  box-shadow:0 0 20px rgba(58,191,248,.6);
+}
+
+.tiktok-special{
+  border:1px solid #ff0050;
+}
+
+.tiktok-special:hover{
+  background:#ff0050;
+  box-shadow:0 0 25px #ff0050;
+}
+
+/* ========= FOOTER ========= */
+footer{
+  background:#000;
+  text-align:center;
+  padding:30px;
+  margin-top:80px;
+  color:var(--gold-light);
+}
+
+/* ========= MOBILE ========= */
+@media(max-width:768px){
+  .hero{
+    padding:90px 20px;
+  }
+  .hero h1{
+    font-size:32px;
+  }
+  .btn{
+    width:100%;
+    max-width:320px;
+  }
+  .section{
+    margin:60px auto;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -291,27 +279,28 @@ footer{
 <!-- HERO -->
 <div class="hero">
   <h1>Issam Eltayb</h1>
-  <p>Professional Real Estate Agent in the UAE</p>
-  <a class="btn btn-primary" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank"><span>View Listings on Bayut</span></a>
-  <a class="btn btn-whatsapp" href="https://wa.me/971567606178" target="_blank"><span>WhatsApp</span></a>
+  <p>Luxury Real Estate Consultant in the UAE</p>
+  <a class="btn btn-gold" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">View Listings on Bayut</a>
+  <a class="btn btn-green" href="https://wa.me/971567606178" target="_blank">WhatsApp Me</a>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
   <div class="card">
     <h2>About Me</h2>
-    <p>I am Issam Eltayb, a professional real estate agent based in Ajman, UAE, helping clients buy, sell, and rent properties with ease. I specialize in finding the right home or investment and provide personalized, trustworthy guidance every step of the way.</p>
+    I help clients secure premium properties across Ajman and the UAE. 
+    My mission is to provide trusted guidance, strong negotiation, 
+    and high-return investment opportunities with complete transparency.
   </div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
-  <h2>Services I Provide</h2>
+  <h2>Services</h2>
   <div class="services">
-    <div class="service-box"><h3>🏢 Residential Rentals</h3><p>Apartments, villas, and studios in prime Ajman locations.</p></div>
-    <div class="service-box"><h3>📈 Investment Consulting</h3><p>High-return property investment guidance.</p></div>
-    <div class="service-box"><h3>📝 Full Contract Support</h3><p>Complete assistance from viewing to contract signing.</p></div>
-    <div class="service-box"><h3>🏗 Property Marketing</h3><p>Professional marketing for landlords.</p></div>
+    <div class="service-box"><h3>Residential Rentals</h3><p>Apartments & villas in prime areas.</p></div>
+    <div class="service-box"><h3>Investment Advisory</h3><p>High ROI property consulting.</p></div>
+    <div class="service-box"><h3>Property Marketing</h3><p>Professional landlord solutions.</p></div>
   </div>
 </div>
 
@@ -321,39 +310,37 @@ footer{
   <div class="properties property-placeholder">Loading properties...</div>
 </div>
 
-<!-- CONTACT SECTION -->
-<div class="section contact-grid">
-  <a class="contact-item contact-call" href="tel:+971567606178"><span>🤙 Call Me<br>0567606178</span></a>
-  <a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com"><span>📧 Email Me<br>issamelhag09@gmail.com</span></a>
-  <a class="contact-item tiktok-special" href="https://www.tiktok.com/@realestateaccount007" target="_blank">
-    <span><i class="fab fa-tiktok"></i> Follow on TikTok<br>@realestateaccount007</span>
-  </a>
+<!-- CONTACT -->
+<div class="section">
+  <h2>Contact Me</h2>
+  <div class="contact-grid">
+    <a class="contact-item contact-call" href="tel:+971567606178">📞 Call Me</a>
+    <a class="contact-item contact-email" href="mailto:issamelhag09@gmail.com">📧 Email Me</a>
+    <a class="contact-item tiktok-special" href="https://www.tiktok.com/@realestateaccount007" target="_blank">
+      <i class="fab fa-tiktok"></i> Follow on TikTok
+    </a>
+  </div>
 </div>
 
-<footer>© 2026 Issam Eltayb Real Estate | All Rights Reserved</footer>
+<footer>© 2026 Issam Eltayb | All Rights Reserved</footer>
 
-<!-- JS: Load Properties -->
 <script>
 fetch('properties.json')
-.then(res => res.json())
-.then(data => {
-  const container = document.querySelector('.properties');
-  container.innerHTML = '';
-  data.forEach(property => {
-    container.innerHTML += `
-      <div class="property-box">
-        <img src="${property.image}" alt="${property.title}">
-        <h3>${property.title}</h3>
-        <p>${property.price}</p>
-        <a href="${property.whatsapp}" target="_blank" class="btn-inquire"><span>Inquire Now</span></a>
-      </div>
-    `;
-  });
-})
-.catch(err => {
-  document.querySelector('.properties').innerHTML = 'Failed to load properties.';
-  console.error(err);
+.then(res=>res.json())
+.then(data=>{
+const container=document.querySelector('.properties');
+container.innerHTML='';
+data.forEach(property=>{
+container.innerHTML+=`
+<div class="property-box">
+<img src="${property.image}">
+<h3>${property.title}</h3>
+<p>${property.price}</p>
+<a href="${property.whatsapp}" target="_blank" class="btn-inquire">Inquire Now</a>
+</div>`;
 });
+})
+.catch(()=>{document.querySelector('.properties').innerHTML='Add properties.json file.'});
 </script>
 
 </body>
