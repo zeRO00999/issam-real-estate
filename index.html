@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#0f0f0f">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Issam Eltayb | UAE Real Estate Consultant</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -11,21 +10,20 @@
 
 <style>
 
-/* ========= LUXURY COLOR SYSTEM ========= */
+/* ================= LUXURY COLOR SYSTEM ================= */
 :root{
-  --bg:#0f0f0f;
-  --card:#1a1a1a;
+  --bg:#0e0e0e;
+  --card:#1c1c1c;
   --soft:#242424;
-  --gold:#c9a227;
-  --gold-light:#e6c35c;
-  --accent:#d4af37;
+  --gold:#c6a43b;
+  --gold-light:#e7c96a;
   --green:#25D366;
   --blue:#3abff8;
   --text:#f5f5f5;
-  --muted:#bdbdbd;
+  --muted:#bfbfbf;
 }
 
-/* ========= GLOBAL ========= */
+/* ================= GLOBAL ================= */
 body{
   margin:0;
   background:var(--bg);
@@ -37,22 +35,23 @@ body{
 h1,h2,h3{
   font-family:'Playfair Display',serif;
   letter-spacing:1px;
+  margin:0;
 }
 
 .section{
-  max-width:1200px;
-  margin:80px auto;
-  padding:0 20px;
+  max-width:1100px;
+  margin:90px auto;
+  padding:0 25px;
+  text-align:center;
 }
 
 .section h2{
-  text-align:center;
   color:var(--gold-light);
-  margin-bottom:40px;
-  font-size:32px;
+  margin-bottom:45px;
+  font-size:34px;
 }
 
-/* ========= HERO ========= */
+/* ================= HERO ================= */
 .hero{
   background:
   linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
@@ -60,18 +59,17 @@ h1,h2,h3{
   background-size:cover;
   background-position:center;
   text-align:center;
-  padding:120px 20px;
+  padding:130px 20px;
 }
 
 .hero h1{
-  font-size:48px;
-  margin:0;
+  font-size:50px;
 }
 
 .hero p{
   margin-top:15px;
-  color:var(--muted);
   font-size:18px;
+  color:var(--muted);
 }
 
 /* HERO BUTTONS */
@@ -79,84 +77,98 @@ h1,h2,h3{
   display:inline-flex;
   justify-content:center;
   align-items:center;
-  padding:14px 32px;
+  padding:14px 34px;
   border-radius:30px;
   font-weight:600;
   text-decoration:none;
-  margin:15px 10px 0;
+  margin:18px 10px 0;
   transition:.3s ease;
-  position:relative;
-  overflow:hidden;
 }
 
 .btn-gold{
   background:linear-gradient(135deg,var(--gold),var(--gold-light));
   color:#111;
-  box-shadow:0 10px 25px rgba(212,175,55,.35);
+  box-shadow:0 10px 30px rgba(212,175,55,.35);
 }
 
 .btn-gold:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 25px rgba(212,175,55,.6);
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(212,175,55,.6);
 }
 
 .btn-green{
   background:var(--green);
   color:#fff;
-  box-shadow:0 10px 25px rgba(37,211,102,.35);
+  box-shadow:0 10px 30px rgba(37,211,102,.35);
 }
 
 .btn-green:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 25px rgba(37,211,102,.6);
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(37,211,102,.6);
 }
 
-/* ========= ABOUT ========= */
-.card{
+/* ================= ABOUT ================= */
+.about-card{
   background:var(--card);
-  padding:50px;
-  border-radius:20px;
+  padding:55px;
+  border-radius:22px;
   box-shadow:0 20px 60px rgba(0,0,0,.6);
-  text-align:center;
-  line-height:1.7;
+  max-width:900px;
+  margin:auto;
+  line-height:1.9;
   font-size:17px;
   color:var(--muted);
 }
 
-/* ========= SERVICES ========= */
+.about-card p{
+  margin-bottom:25px;
+}
+
+/* ================= SERVICES ================= */
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+  margin-top:20px;
 }
 
 .service-box{
   background:var(--card);
-  padding:35px;
-  border-radius:18px;
+  padding:40px;
+  border-radius:20px;
   transition:.3s;
+  min-height:260px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .service-box:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 25px rgba(212,175,55,.4);
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(212,175,55,.4);
 }
 
 .service-box h3{
   color:var(--gold-light);
-  margin-bottom:10px;
+  margin-bottom:15px;
 }
 
-/* ========= PROPERTIES ========= */
+.service-box p{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:15px;
+}
+
+/* ================= PROPERTIES ================= */
 .properties{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
   gap:30px;
 }
 
 .property-box{
   background:var(--card);
-  border-radius:20px;
+  border-radius:22px;
   padding:20px;
   transition:.3s;
 }
@@ -168,19 +180,20 @@ h1,h2,h3{
 
 .property-box img{
   width:100%;
-  height:200px;
+  height:190px;
   object-fit:cover;
-  border-radius:15px;
+  border-radius:14px;
   margin-bottom:15px;
 }
 
 .property-box h3{
   color:var(--gold-light);
+  margin-bottom:8px;
 }
 
 .property-box p{
   color:var(--muted);
-  margin:10px 0;
+  margin-bottom:15px;
 }
 
 .btn-inquire{
@@ -188,10 +201,9 @@ h1,h2,h3{
   color:#fff;
   padding:12px;
   border-radius:25px;
-  text-align:center;
-  display:block;
   text-decoration:none;
   font-weight:600;
+  display:block;
   transition:.3s;
 }
 
@@ -199,18 +211,17 @@ h1,h2,h3{
   box-shadow:0 0 20px rgba(37,211,102,.6);
 }
 
-/* ========= CONTACT ========= */
+/* ================= CONTACT ================= */
 .contact-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
 }
 
 .contact-item{
   background:var(--card);
-  padding:25px;
-  border-radius:20px;
-  text-align:center;
+  padding:28px;
+  border-radius:22px;
   text-decoration:none;
   font-weight:600;
   transition:.3s;
@@ -224,7 +235,7 @@ h1,h2,h3{
 .contact-call:hover{
   background:var(--gold);
   color:#111;
-  box-shadow:0 0 20px rgba(212,175,55,.6);
+  box-shadow:0 0 25px rgba(212,175,55,.6);
 }
 
 .contact-email{
@@ -234,7 +245,7 @@ h1,h2,h3{
 .contact-email:hover{
   background:var(--blue);
   color:#111;
-  box-shadow:0 0 20px rgba(58,191,248,.6);
+  box-shadow:0 0 25px rgba(58,191,248,.6);
 }
 
 .tiktok-special{
@@ -246,29 +257,36 @@ h1,h2,h3{
   box-shadow:0 0 25px #ff0050;
 }
 
-/* ========= FOOTER ========= */
+/* ================= FOOTER ================= */
 footer{
   background:#000;
+  padding:35px;
   text-align:center;
-  padding:30px;
-  margin-top:80px;
   color:var(--gold-light);
+  margin-top:100px;
 }
 
-/* ========= MOBILE ========= */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
   .hero{
     padding:90px 20px;
   }
+
   .hero h1{
     font-size:32px;
   }
+
   .btn{
     width:100%;
     max-width:320px;
   }
+
   .section{
-    margin:60px auto;
+    margin:70px auto;
+  }
+
+  .about-card{
+    padding:35px;
   }
 }
 
@@ -286,28 +304,71 @@ footer{
 
 <!-- ABOUT -->
 <div class="section">
-  <div class="card">
-    <h2>About Me</h2>
-    I help clients secure premium properties across Ajman and the UAE. 
-    My mission is to provide trusted guidance, strong negotiation, 
-    and high-return investment opportunities with complete transparency.
+  <h2>About Me</h2>
+  <div class="about-card">
+    <p>
+      I am Issam Eltayb, a dedicated real estate agent based in Ajman, UAE,
+      specializing in residential leasing, investment properties, and landlord representation.
+      With deep knowledge of the local market and strong negotiation skills,
+      I help clients secure the right property at the right value.
+    </p>
+    <p>
+      My work is built on trust, professionalism, and long-term relationships.
+      Whether you are searching for your next home or expanding your portfolio,
+      I provide personalized support, clear communication, and complete transparency.
+    </p>
+    <p>
+      From property viewing to final contract signing, I ensure a seamless,
+      secure, and stress-free real estate experience for every client.
+    </p>
   </div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
-  <h2>Services</h2>
+  <h2>Professional Real Estate Services</h2>
   <div class="services">
-    <div class="service-box"><h3>Residential Rentals</h3><p>Apartments & villas in prime areas.</p></div>
-    <div class="service-box"><h3>Investment Advisory</h3><p>High ROI property consulting.</p></div>
-    <div class="service-box"><h3>Property Marketing</h3><p>Professional landlord solutions.</p></div>
+
+    <div class="service-box">
+      <h3>Residential Rentals</h3>
+      <p>
+        Premium apartments, villas, and studios across Ajman and the UAE.
+        I assist tenants in selecting properties that match lifestyle,
+        budget, and preferred locations.
+      </p>
+    </div>
+
+    <div class="service-box">
+      <h3>Investment Advisory</h3>
+      <p>
+        Strategic guidance for investors seeking high-return rental properties.
+        Market analysis, ROI evaluation, and long-term planning support.
+      </p>
+    </div>
+
+    <div class="service-box">
+      <h3>Property Marketing</h3>
+      <p>
+        Professional listing presentation, pricing strategy, online exposure,
+        and tenant screening to maximize rental performance.
+      </p>
+    </div>
+
+    <div class="service-box">
+      <h3>Full Contract Support</h3>
+      <p>
+        Complete assistance from viewing to contract signing,
+        ensuring documentation accuracy and smooth transactions.
+      </p>
+    </div>
+
   </div>
 </div>
 
 <!-- PROPERTIES -->
 <div class="section">
   <h2>Featured Properties</h2>
-  <div class="properties property-placeholder">Loading properties...</div>
+  <div class="properties property-placeholder">Add properties.json file</div>
 </div>
 
 <!-- CONTACT -->
@@ -323,25 +384,6 @@ footer{
 </div>
 
 <footer>© 2026 Issam Eltayb | All Rights Reserved</footer>
-
-<script>
-fetch('properties.json')
-.then(res=>res.json())
-.then(data=>{
-const container=document.querySelector('.properties');
-container.innerHTML='';
-data.forEach(property=>{
-container.innerHTML+=`
-<div class="property-box">
-<img src="${property.image}">
-<h3>${property.title}</h3>
-<p>${property.price}</p>
-<a href="${property.whatsapp}" target="_blank" class="btn-inquire">Inquire Now</a>
-</div>`;
-});
-})
-.catch(()=>{document.querySelector('.properties').innerHTML='Add properties.json file.'});
-</script>
 
 </body>
 </html>
