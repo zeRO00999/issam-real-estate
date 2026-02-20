@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Issam Eltayb | UAE Real Estate Consultant</title>
+<title>Issam Eltayb | UAE Real Estate agent</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
@@ -261,6 +261,23 @@ footer{
   .contact-grid{
     grid-template-columns:1fr;
   }
+/* ===== TEXT JUSTIFICATION ===== */
+.card p,
+.service-box p,
+.property-box p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.9;
+}
+
+/* ===== MOBILE FIX FOR JUSTIFY ===== */
+@media(max-width:768px){
+  .card p,
+  .service-box p,
+  .property-box p {
+    text-align: justify;
+    text-align-last: center;
+  }
 
 }
 
@@ -357,3 +374,4 @@ fetch('/properties.json')
 
 </body>
 </html>
+
