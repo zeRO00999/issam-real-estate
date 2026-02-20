@@ -278,7 +278,41 @@ footer{
     text-align: justify;
     text-align-last: center;
   }
+/* ===== PERFECT TEXT JUSTIFICATION FIX ===== */
 
+/* About Me */
+.section .card p{
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+/* Services */
+.service-box p{
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.8;
+}
+
+/* Properties */
+.property-box p{
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.8;
+}
+
+/* ===== MOBILE CLEAN FIX ===== */
+@media(max-width:768px){
+
+  .section .card p,
+  .service-box p,
+  .property-box p{
+    text-align: justify;
+    text-align-last: center;
+    padding: 0 10px;
+  }
 }
 
 </style>
@@ -288,7 +322,7 @@ footer{
 <!-- HERO -->
 <div class="hero">
   <h1>Issam Eltayb</h1>
-  <p>Luxury Real Estate Consultant in the UAE</p>
+  <p>Luxury Real Estate agent in the UAE</p>
   <a class="btn btn-gold" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">View Listings on Bayut</a>
   <a class="btn btn-green" href="https://wa.me/971567606178" target="_blank">WhatsApp Me</a>
 </div>
@@ -374,4 +408,5 @@ fetch('/properties.json')
 
 </body>
 </html>
+
 
