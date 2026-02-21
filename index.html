@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Issam Eltayb | UAE Real Estate agent</title>
+<title>Issam Eltayb | UAE Real Estate Agent</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
@@ -23,9 +23,7 @@
 }
 
 /* ===== GLOBAL ===== */
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
@@ -62,9 +60,7 @@ h1,h2,h3{
   padding:120px 20px;
 }
 
-.hero h1{
-  font-size:48px;
-}
+.hero h1{ font-size:48px; }
 
 .hero p{
   margin-top:15px;
@@ -109,8 +105,13 @@ h1,h2,h3{
   border-radius:20px;
   max-width:850px;
   margin:auto;
-  line-height:1.9;
+}
+
+.about-card p{
   color:var(--muted);
+  line-height:1.9;
+  text-align:justify;
+  text-justify:inter-word;
 }
 
 /* ===== SERVICES ===== */
@@ -135,6 +136,13 @@ h1,h2,h3{
 .service-box h3{
   color:var(--gold-light);
   margin-bottom:10px;
+}
+
+.service-box p{
+  color:var(--muted);
+  line-height:1.8;
+  text-align:justify;
+  text-justify:inter-word;
 }
 
 /* ===== PROPERTIES ===== */
@@ -171,6 +179,9 @@ h1,h2,h3{
 .property-box p{
   color:var(--muted);
   margin:10px 0;
+  line-height:1.8;
+  text-align:justify;
+  text-justify:inter-word;
 }
 
 .btn-inquire{
@@ -205,31 +216,14 @@ h1,h2,h3{
   transition:.3s;
 }
 
-.contact-call{
-  border:1px solid var(--gold);
-}
+.contact-call{ border:1px solid var(--gold); }
+.contact-call:hover{ background:var(--gold); color:#111; }
 
-.contact-call:hover{
-  background:var(--gold);
-  color:#111;
-}
+.contact-email{ border:1px solid var(--blue); }
+.contact-email:hover{ background:var(--blue); color:#111; }
 
-.contact-email{
-  border:1px solid var(--blue);
-}
-
-.contact-email:hover{
-  background:var(--blue);
-  color:#111;
-}
-
-.tiktok-special{
-  border:1px solid #ff0050;
-}
-
-.tiktok-special:hover{
-  background:#ff0050;
-}
+.tiktok-special{ border:1px solid #ff0050; }
+.tiktok-special:hover{ background:#ff0050; }
 
 /* ===== FOOTER ===== */
 footer{
@@ -239,16 +233,14 @@ footer{
   color:var(--gold-light);
 }
 
-/* ===== MOBILE FIX ===== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 
-  .hero{
-    padding:90px 15px;
-  }
+  body{ text-align:center; }
 
-  .hero h1{
-    font-size:30px;
-  }
+  .hero{ padding:90px 15px; }
+
+  .hero h1{ font-size:30px; }
 
   .btn{
     width:100%;
@@ -261,57 +253,12 @@ footer{
   .contact-grid{
     grid-template-columns:1fr;
   }
-/* ===== TEXT JUSTIFICATION ===== */
-.card p,
-.service-box p,
-.property-box p {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.9;
-}
 
-/* ===== MOBILE FIX FOR JUSTIFY ===== */
-@media(max-width:768px){
-  .card p,
-  .service-box p,
-  .property-box p {
-    text-align: justify;
-    text-align-last: center;
-  }
-/* ===== PERFECT TEXT JUSTIFICATION FIX ===== */
-
-/* About Me */
-.section .card p{
-  text-align: justify;
-  text-justify: inter-word;
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.9;
-}
-
-/* Services */
-.service-box p{
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.8;
-}
-
-/* Properties */
-.property-box p{
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.8;
-}
-
-/* ===== MOBILE CLEAN FIX ===== */
-@media(max-width:768px){
-
-  .section .card p,
+  .about-card p,
   .service-box p,
   .property-box p{
-    text-align: justify;
-    text-align-last: center;
-    padding: 0 10px;
+    text-align:justify;
+    text-align-last:left;
   }
 }
 
@@ -322,7 +269,7 @@ footer{
 <!-- HERO -->
 <div class="hero">
   <h1>Issam Eltayb</h1>
-  <p>Luxury Real Estate agent in the UAE</p>
+  <p>Luxury Real Estate Agent in the UAE</p>
   <a class="btn btn-gold" href="https://www.bayut.com/brokers/issam-ahmed-elhag-eltayb-2666249.html" target="_blank">View Listings on Bayut</a>
   <a class="btn btn-green" href="https://wa.me/971567606178" target="_blank">WhatsApp Me</a>
 </div>
@@ -331,10 +278,10 @@ footer{
 <div class="section">
   <h2>About Me</h2>
   <div class="about-card">
-    I am a professional real estate agent based in Ajman, UAE,
-    specializing in residential rentals, property investment, and landlord representation.
-    My focus is delivering trusted advice, strong negotiation,
-    and smooth transactions from property viewing to final contract signing.
+    <p>
+      I am a professional real estate agent based in Ajman, UAE, specializing in residential rentals, property investment, and landlord representation. 
+      My focus is delivering trusted advice, strong negotiation skills, and smooth transactions from property viewing to final contract signing, ensuring clients experience a secure and profitable real estate journey.
+    </p>
   </div>
 </div>
 
@@ -344,19 +291,19 @@ footer{
   <div class="services">
     <div class="service-box">
       <h3>Residential Rentals</h3>
-      <p>Helping tenants secure premium apartments and villas in prime locations with competitive pricing.</p>
+      <p>Helping tenants secure premium apartments and villas in prime locations with competitive pricing and transparent agreements.</p>
     </div>
     <div class="service-box">
       <h3>Investment Advisory</h3>
-      <p>Providing market analysis and ROI-focused property recommendations for smart investors.</p>
+      <p>Providing detailed market analysis and ROI-focused property recommendations for smart investors seeking long-term growth.</p>
     </div>
     <div class="service-box">
       <h3>Property Marketing</h3>
-      <p>Professional listing exposure, pricing strategy, and tenant screening for landlords.</p>
+      <p>Professional listing exposure, pricing strategy, and tenant screening solutions for landlords.</p>
     </div>
     <div class="service-box">
       <h3>Full Contract Support</h3>
-      <p>Complete assistance ensuring secure and transparent documentation for all transactions.</p>
+      <p>Complete assistance ensuring secure, compliant, and transparent documentation for all transactions.</p>
     </div>
   </div>
 </div>
@@ -408,5 +355,3 @@ fetch('/properties.json')
 
 </body>
 </html>
-
-
