@@ -107,13 +107,6 @@ h1,h2,h3{
   margin:auto;
 }
 
-.about-card p{
-  color:var(--muted);
-  line-height:1.9;
-  text-align:justify;
-  text-justify:inter-word;
-}
-
 /* ===== SERVICES ===== */
 .services{
   display:grid;
@@ -136,13 +129,6 @@ h1,h2,h3{
 .service-box h3{
   color:var(--gold-light);
   margin-bottom:10px;
-}
-
-.service-box p{
-  color:var(--muted);
-  line-height:1.8;
-  text-align:justify;
-  text-justify:inter-word;
 }
 
 /* ===== PROPERTIES ===== */
@@ -174,29 +160,6 @@ h1,h2,h3{
 
 .property-box h3{
   color:var(--gold-light);
-}
-
-.property-box p{
-  color:var(--muted);
-  margin:10px 0;
-  line-height:1.8;
-  text-align:justify;
-  text-justify:inter-word;
-}
-
-.btn-inquire{
-  display:block;
-  background:var(--green);
-  color:#fff;
-  padding:12px;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:600;
-  transition:.3s;
-}
-
-.btn-inquire:hover{
-  box-shadow:0 0 20px rgba(37,211,102,.6);
 }
 
 /* ===== CONTACT ===== */
@@ -254,14 +217,30 @@ footer{
     grid-template-columns:1fr;
   }
 
+}
+
+/* ===== WORD JUSTIFICATION FIX ===== */
+
+/* About, Services, Properties text */
+.about-card p,
+.service-box p,
+.property-box p{
+  text-align: justify;          /* Align both left and right edges */
+  text-justify: inter-word;     /* Reasonable word spacing */
+  line-height: 1.85;            /* Good line height */
+  hyphens: auto;                /* Break long words if needed */
+  word-break: normal;           /* Prevent awkward breaks */
+}
+
+/* Mobile-specific adjustment */
+@media(max-width:768px){
   .about-card p,
   .service-box p,
   .property-box p{
-    text-align:justify;
-    text-align-last:left;
+    text-align: justify;
+    text-align-last: left;      /* Last line aligns left on mobile */
   }
 }
-
 </style>
 </head>
 <body>
