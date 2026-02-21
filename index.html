@@ -162,6 +162,23 @@ h1,h2,h3{
   color:var(--gold-light);
 }
 
+/* ===== INQUIRE BUTTON IN PROPERTIES ===== */
+.btn-inquire{
+  display:block;
+  background:var(--green);
+  color:#fff;
+  padding:12px 20px;        /* exact previous padding */
+  border-radius:25px;       /* rounded like before */
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+  text-align:center;
+}
+
+.btn-inquire:hover{
+  box-shadow:0 0 20px rgba(37,211,102,.6);
+}
+
 /* ===== CONTACT ===== */
 .contact-grid{
   display:grid;
@@ -220,25 +237,22 @@ footer{
 }
 
 /* ===== WORD JUSTIFICATION FIX ===== */
-
-/* About, Services, Properties text */
 .about-card p,
 .service-box p,
 .property-box p{
-  text-align: justify;          /* Align both left and right edges */
-  text-justify: inter-word;     /* Reasonable word spacing */
-  line-height: 1.85;            /* Good line height */
-  hyphens: auto;                /* Break long words if needed */
-  word-break: normal;           /* Prevent awkward breaks */
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.85;
+  hyphens: auto;
+  word-break: normal;
 }
 
-/* Mobile-specific adjustment */
 @media(max-width:768px){
   .about-card p,
   .service-box p,
   .property-box p{
     text-align: justify;
-    text-align-last: left;      /* Last line aligns left on mobile */
+    text-align-last: left;
   }
 }
 </style>
